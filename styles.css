@@ -1,0 +1,272 @@
+/* Reset default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Root variables for theme color */
+:root {
+  --primary-color: hsl(227, 66%, 55%);
+  --background-color: #f0f0f0;
+  --text-color: #333;
+  --card-bg: #fff;
+}
+
+/* Dark Mode */
+body.dark {
+  --background-color: #121212;
+  --text-color: #eee;
+  --card-bg: #1e1e1e;
+}
+
+/* Body and wrapper */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  min-height: 100vh;
+}
+
+.wrapper {
+  max-width: 600px;
+  margin: 10px auto;
+  padding: 10px;
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* Header */
+header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+header i.back-icon {
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+/* Input Part */
+.input-part {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.input-part input {
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.input-part button {
+  padding: 10px 15px;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.input-part button:hover {
+  opacity: 0.9;
+}
+
+.input-part .info-txt {
+  font-size: 0.9rem;
+  color: red;
+}
+
+/* Weather Part */
+.weather-part {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.weather-part img {
+  width: 70px;
+  height: 70px;
+  margin: 10px 0;
+}
+
+.weather-part .location span {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.weather-part .temp {
+  font-size: 2.5rem;
+  margin: 10px 0;
+}
+
+.weather-part .temp .numb-2 {
+  font-size: 1rem;
+  color: gray;
+  margin-left: 5px;
+}
+
+.weather-part .weather {
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  margin: 5px 0;
+}
+
+.weather-part .humidity,
+.weather-part .wind,
+.weather-part .date-time {
+  margin: 5px 0;
+  font-size: 0.9rem;
+}
+
+/* Forecast Section */
+.forecast {
+  margin-bottom: 25px;
+}
+
+.forecast h2 {
+  margin-bottom: 10px;
+}
+
+.forecast-details {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+}
+
+.forecast-card {
+  background-color: var(--card-bg);
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 10px;
+  min-width: 100px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.forecast-card img {
+  width: 50px;
+  height: 50px;
+  margin: 5px 0;
+}
+
+.forecast-card .forecast-temp {
+  font-size: 0.9rem;
+}
+
+/* Chart Section */
+.chart-section {
+  margin-bottom: 25px;
+}
+
+
+.chart-section canvas {
+  width: 100%;
+  max-height: 70px; /* reduced height from 300px to 200px */
+}
+
+/* Theme Section */
+.theme-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* .theme-section .dark-mode-btn {
+  padding: 10px 15px;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: fit-content;
+} */
+ /* Dark Mode Styles */
+body.dark-mode,
+.wrapper.dark-mode {
+  background-color: #121212; /* dark background */
+  color: #ffffff; /* all text white */
+}
+
+.wrapper.dark-mode .input-part input,
+.wrapper.dark-mode .input-part button,
+.wrapper.dark-mode .forecast-card {
+  background-color: #1e1e1e; /* dark background for input, button, and forecast cards */
+  color: #ffffff; /* text white */
+}
+
+.wrapper.dark-mode .weather-part {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+.wrapper.dark-mode .theme-section button {
+  background-color: #333;
+  color: #fff;
+}
+
+/* Optional: Chart lines can stay the same, background transparent */
+
+
+
+
+/* Scrollbar for forecast */
+.forecast-details::-webkit-scrollbar {
+  height: 6px;
+}
+
+.forecast-details::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 3px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .forecast-details {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+
+  .weather-part .temp {
+    font-size: 2rem;
+  }
+
+  .weather-part img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .forecast-card {
+    min-width: 100px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    padding: 15px;
+    margin: 10px;
+  }
+
+  .weather-part .temp {
+    font-size: 1.8rem;
+  }
+
+  .weather-part .temp .numb-2 {
+    font-size: 0.8rem;
+  }
+
+  .forecast-card {
+    min-width: 90px;
+    padding: 6px;
+  }
+}

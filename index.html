@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="wrapper">
+    <!-- Header -->
+    <header>
+      <i class="back-icon">&#8592;</i>
+      <h1>Weather App</h1>
+    </header>
+
+    <!-- Input Part -->
+    <div class="input-part">
+      <input type="text" placeholder="Enter city name">
+      <button>Use My Location</button>
+      <p class="info-txt"></p>
+    </div>
+
+    <!-- Weather Part -->
+    <div class="weather-part">
+      <div class="location">
+        <span></span>
+      </div>
+      <div class="temp">
+        <span class="numb"></span>°C
+        <span class="numb-2"></span>°C
+      </div>
+      <div class="weather"></div>
+      <div class="humidity">Humidity: <span></span></div>
+      <div class="wind">Wind: <span></span></div>
+      <div class="date-time"></div>
+      <img src="" alt="Weather Icon">
+    </div>
+
+    <!-- Forecast Section -->
+    <div class="forecast">
+      <h2>7-Day Forecast</h2>
+      <div class="forecast-details"></div>
+    </div>
+
+    <!-- Hourly Chart -->
+    <div class="chart-section">
+      <h2>Hourly Temperature (Next 24 Hours)</h2>
+      <canvas id="weatherChart"></canvas>
+      <div class="theme-section">
+         <button class="dark-mode-btn">Toggle Dark Mode</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
